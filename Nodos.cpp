@@ -11,33 +11,64 @@ int main(){
 	char *locale;
     locale=setlocale(LC_ALL,"");
     
-	Nodo n1;
-	n1.valor=3;
-	n1.puntero=NULL;
-	Nodo n2;
-	n2.valor=7;
-	n2.puntero=NULL;
-	Nodo n3;
-	n3.valor=9;
-	n3.puntero=NULL;
-	Nodo n4;
-	n4.valor=5;
-	n4.puntero=NULL;
-	Nodo n5;
-	n5.valor=2;
-	n5.puntero=NULL;
+    Nodo *inicio;
+    Nodo *aux;
+    
+    inicio=NULL;
+    aux=new Nodo();
+    
+    //aux->valor=3;
+    //aux->puntero=NULL;
+    
+	//cout<<aux->valor<<endl;
 	
-	n1.puntero=&n2;
-	n2.puntero=&n3;
-	n3.puntero=&n4;
-	n4.puntero=&n5;
+	//delete aux;
 
-	cout<<n1.valor<<endl;
-	cout<<n1.puntero->valor<<endl;
-	cout<<n1.puntero->puntero->valor<<endl;
-	cout<<n1.puntero->puntero->puntero->valor<<endl;
-	cout<<n1.puntero->puntero->puntero->puntero->valor<<endl;
-		
+	
+	aux=new Nodo();
+	aux->valor=7;
+	aux->puntero=NULL;
+	cout<<aux->valor<<endl;
+	inicio=aux;
+	
+	
+	aux=new Nodo();
+	aux->valor=8;
+	aux->puntero=NULL;
+	cout<<aux->valor<<endl;
+	inicio->puntero=aux;
+	
+	
+	aux=new Nodo();
+	aux->valor=9;
+	aux->puntero=NULL;
+	cout<<aux->valor<<endl;
+	inicio->puntero->puntero=aux;
+	
+	
+	aux=new Nodo();
+	aux->valor=5;
+	aux->puntero=NULL;
+	cout<<aux->valor<<endl;
+	inicio->puntero->puntero->puntero=aux;
+	
+	
+	aux=new Nodo();
+	aux->valor=6;
+	aux->puntero=NULL;
+	cout<<aux->valor<<endl;
+	inicio->puntero->puntero->puntero->puntero=aux;
+	
+	cout<<endl;
+	cout<<"Vista Dinamica:"<<endl;
+	cout<<inicio->valor<<endl;
+	cout<<(inicio->puntero)->valor<<endl;
+	cout<<(inicio->puntero)->puntero->valor<<endl;
+	cout<<(inicio->puntero)->puntero->puntero->valor<<endl;
+	cout<<(inicio->puntero)->puntero->puntero->puntero->valor<<endl;
+
+	
+
 	system("pause");
 	return 0;
 
